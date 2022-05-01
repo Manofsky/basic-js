@@ -13,6 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getSeason(date) {
   if (arguments.length === 0) { return 'Unable to determine the time of year!' };
+  if (date[Symbol.toStringTag] !== undefined) { throw new Error('Invalid date!') }
   let currentDate = new Date();
   if (typeof date !== 'object' || typeof date.getMonth !== 'function' || Math.floor(date.getTime() / 3600) === Math.floor(currentDate.getTime() / 3600)) { throw new Error('Invalid date!') };
   switch (date.getMonth()) {
