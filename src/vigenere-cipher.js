@@ -21,7 +21,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 class VigenereCipheringMachine {
   constructor(type) {
-    this.type = type;
+    this.machine = type;
   }
 
   encrypt(message, key) {
